@@ -21,10 +21,15 @@
   <meta name="twitter:image"       content="https://myoh25.github.io/wedding-card/og.png">
 </head>
 <body>
-  <script>
-    /* 0.5초 뒤 실제 GAS 웹앱으로 이동 – 사용자는 본청첩장 기능을 그대로 이용 */
-    setTimeout(() => location.replace('https://script.google.com/macros/s/AKfycbyrGNB8oMpyPUQWD78WgrIohZyUDLiDw6glX_3OSk8XJjBxJAu8rnGXavLy7GFW-GKC/exec'), 300);
-  </script>
+<script>
+  /* UA에 'KAKAOTALK', 'FACEBOT', 'FACEBOOK' 등이 없으면 즉시 이동 */
+  const ua = navigator.userAgent.toUpperCase();
+  const isBot = /KAKAOTALK|KAKAOLINKSCRAP|FACEBOT|FACEBOOK|TWITTERBOT|SLACKBOT/.test(ua);
+
+  if (!isBot) {
+    location.replace('https://script.google.com/macros/s/AKfycbw8mnNjrjj3Zhe-R75gPTUltlLIdOTd7rZkJQ1JtyQBLXIWxoq9R66yO6rBvO1ntff0/exec');
+  }
+</script>
   모바일 청첩장으로 이동 중입니다…
 </body>
 </html>
