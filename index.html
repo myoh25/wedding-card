@@ -5,27 +5,21 @@
   <title>민열♥효정 모바일 청첩장</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- ✅ 구글 웹폰트 -->
+  <!-- 웹폰트 -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- ✨ 간단 스타일 -->
+  <!-- 간단 스타일 -->
   <style>
     body{
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 1.3rem;         /* 기본 글꼴 크기 */
-      display: flex;
-      align-items: center;       /* 세로 가운데 */
-      justify-content: center;   /* 가로 가운데 */
-      height: 100vh;             /* 화면 전체 높이 */
-      margin: 0;
-      background: #FFF5E8;       /* 파스텔 살구색 배경 */
+      font-family:'Noto Sans KR',sans-serif;
+      font-size:1.3rem;
+      display:flex;align-items:center;justify-content:center;
+      height:100vh;margin:0;
+      background:#FFF5E8;           /* 파스텔 살구색 */
     }
     .loading{
-      font-size: 2rem;           /* 문구는 크게 */
-      font-weight: 700;          /* 볼드 */
-      text-align: center;        /* 문구 내부 가운데 정렬 */
-      line-height: 1.4;
+      font-size:2rem;font-weight:700;text-align:center;line-height:1.4;
     }
   </style>
 
@@ -34,7 +28,7 @@
   <meta property="og:url"         content="https://myoh25.github.io/wedding-card/">
   <meta property="og:title"       content="민열♥효정 결혼합니다">
   <meta property="og:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
-  <meta property="og:image"       content="https://myoh25.github.io/wedding-card/og.png?v=3">
+  <meta property="og:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
 
@@ -42,22 +36,19 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="민열♥효정 결혼합니다">
   <meta name="twitter:description" content="모바일 청첩장에서 장소·계좌 정보를 확인하세요.">
-  <meta name="twitter:image"       content="https://myoh25.github.io/wedding-card/og.png?v=3">
+  <meta name="twitter:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
 </head>
 <body>
-  <!-- ⏳ 잠깐 보일 안내 문구 -->
-  <div class="loading">😁&nbsp;모바일 청첩장으로 이동 중입니다…🫡</div>
+  <!-- ⏳ 잠깐 보일 문구 -->
+  <div class="loading">😁민열이와 효정이의 모바일 청첩장으로 날아가는 중…🫡</div>
 
-  <!-- ▶️ 크롤러가 아니면 즉시 GAS 웹앱으로 이동 -->
+  <!-- 0.1 초 뒤 즉시 리다이렉트 -->
   <script>
-    const ua  = navigator.userAgent.toUpperCase();
-    const bot = /KAKAOTALK|KAKAOLINKSCRAP|FACEBOT|FACEBOOK|TWITTERBOT|SLACKBOT/.test(ua);
-
-    if (!bot) {
+    setTimeout(() => {
       location.replace(
         'https://script.google.com/macros/s/AKfycbw8mnNjrjj3Zhe-R75gPTUltlLIdOTd7rZkJQ1JtyQBLXIWxoq9R66yO6rBvO1ntff0/exec'
       );
-    }
+    }, 100);   // 100 ms = 0.1 초
   </script>
 </body>
 </html>
