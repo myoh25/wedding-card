@@ -2,14 +2,12 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>민열♥효정 모바일 청첩장</title>
+  <title>민열♥️효정 모바일 청첩장</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- 웹폰트 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- 배경 그라데이션 물결 ---------- */
+    /* ---------- 배경 그라데이션 ---------- */
     @keyframes bgMove{
       0%{background-position:0 0}
       100%{background-position:400% 0}
@@ -24,6 +22,7 @@
       animation:bgMove 10s linear infinite;
       overflow:hidden;
     }
+
     /* ---------- 펄스 하트 ---------- */
     .heart{
       position:absolute;width:90px;height:80px;
@@ -36,36 +35,49 @@
     }
     .heart:before{top:-45px;left:0}
     .heart:after{left:-45px;top:0}
-
     @keyframes pulse{
       0%,100%{transform:translate(-50%,-50%) scale(1) rotate(45deg)}
       50%     {transform:translate(-50%,-50%) scale(1.15) rotate(45deg)}
     }
 
-    /* ---------- 로딩 문구 페이드 ---------- */
+    /* ---------- 로딩 문구 ---------- */
     .loading{
       font-size:1.6rem;font-weight:700;text-align:center;line-height:1.45;
-      opacity:0;animation:fade 1s ease-in-out forwards;
-      color:#694736;
-      z-index:1;
+      color:#694736;z-index:1;
+      /* 두 개의 애니메이션을 동시에: 오래 보이기 + 춤 */
+      animation:
+        fadeHold 3s ease-in-out forwards,
+        dance     0.8s ease-in-out infinite;
     }
-    @keyframes fade{
-      0%{opacity:0;transform:translateY(20px)}
-      60%{opacity:1;transform:translateY(0)}
+
+    /* 글씨가 오래 보이는 페이드 */
+    @keyframes fadeHold{
+      0%  {opacity:0}
+      10% {opacity:1}
+      80% {opacity:1}
       100%{opacity:0}
+    }
+
+    /* 흔들리며 튀어오르는 춤 */
+    @keyframes dance{
+      0%  {transform:translateY(0)   rotate(0deg)   scale(1)}
+      25% {transform:translateY(-8px) rotate(-4deg) scale(1.05)}
+      50% {transform:translateY(0)   rotate(0deg)   scale(1)}
+      75% {transform:translateY(8px)  rotate(4deg)  scale(1.05)}
+      100%{transform:translateY(0)   rotate(0deg)   scale(1)}
     }
   </style>
 
   <!-- ────────── Open Graph / Twitter 카드 ────────── -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://myoh25.github.io/wedding-card/">
-  <meta property="og:title"       content="민열♥효정 결혼합니다">
+  <meta property="og:title"       content="민열♥️효정 결혼합니다">
   <meta property="og:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
   <meta property="og:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
-  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:card"       content="summary_large_image">
 </head>
 <body>
-  <!-- 펄스 하트 2개 배치 -->
+  <!-- 펄스 하트 2개 -->
   <div class="heart" style="top:45%;left:45%;"></div>
   <div class="heart" style="top:55%;left:55%;animation-delay:.3s;"></div>
 
@@ -74,11 +86,11 @@
     😁 민열이와 효정이의<br>모바일 청첩장으로 배송중...🚀
   </div>
 
-  <!-- 1.1초 뒤 리다이렉트 -->
+  <!-- 3.2초 뒤 리다이렉트 (애니메이션 끝나고 살짝 여유) -->
   <script>
     setTimeout(()=>{
       location.replace('https://script.google.com/macros/s/AKfycbwEu-_5wZTy43EsXFLzE2KrF4NnH2LDPNNZre7QEVi5C-pG8cgBXZmifqHPkNoMP285/exec');
-    },1100);   // 로딩 애니메이션(1s) + 여유 100 ms
+    }, 3200);
   </script>
 </body>
 </html>
