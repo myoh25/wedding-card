@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>민열♥️효정 모바일 청첩장으로 가는중...</title>
+  <title>민열♥️효정 모바일 청첩장</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <!-- 기본 SEO -->
@@ -171,13 +171,28 @@ body{
   0%,100%{transform:translate(0,0) rotate(45deg)}
   50%{transform:translate(1px,-1px) rotate(45deg)}
 }
-
 /* ---- 로딩 문구 ---------------------------------------- */
 .loading{
   position:relative;z-index:100;text-align:center;font-size:1.4rem;font-weight:700;
   line-height:1.5;margin-top:440px;animation:float 2.2s ease-in-out infinite; /* float 재사용 */
 }
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* 로딩 박스 안 진행 바 */
+.progress-wrap{
+  width:160px; height:6px; margin:14px auto 6px; background:#555; border-radius:4px;
+  overflow:hidden;
+}
+.progress-bar{
+  width:0%; height:100%; background:#ff9800; transition:width .2s linear;
+}
+
+/* 초 숫자 */
+.countdown{margin-top:4px;font-size:1rem;font-weight:500}
+.note{
+  font-size:.78rem;            /* 본문보다 작게 */
+  color:#ccc;                  /* 회색 톤으로 은은하게 */
+  margin-top:4px;
+}
 </style>
 </head>
 
@@ -206,12 +221,36 @@ body{
   </div>
 
   <!-- 로딩 문구 -->
-  <div class="loading">민열이와 효정이의<br>모바일 청첩장으로 날아가는중...</div>
-
+  <div class="loading">민열이와 효정이의<br>모바일 청첩장으로 날아가는중...
+  <div class="progress-wrap">
+    <div class="progress-bar"></div>
+  </div>
+  <p class="countdown"><span id="left">5</span>초 남았습니다</p>
+  <p class="note">직접 만든거라 시간이 걸려요🥲</p>
+</div>
 <script>
-setTimeout(()=>location.replace(
-  'https://script.google.com/macros/s/AKfycbxiHQAQCCoV8HBD5ZHK87GmRRoqoQk9Ry6Df-B0IowL8qXhreeOQ5KHkEIJesVBqC9m/exec'
-),2500);
+const TARGET = 'https://script.google.com/macros/s/AKfycbyKyuxmqhIAi2FNtXSuhFgbwDBz61J99VL_i4AXVQkQv6ftPbTqatYyVbu9Co60J2sk/exec';
+const DELAY  = 5000;   // 타이머는 그대로 5s
+const STEP   = 100;
+
+const bar = document.querySelector('.progress-bar');
+const leftS = document.getElementById('left');
+
+/* (1) 백그라운드로 미리 프리페치 */
+fetch(TARGET, {mode:'no-cors'}).catch(()=>{});   // 오류 무시 — 캐시만 확보
+
+/* (2) 기존 타이머 로직 */
+let elapsed = 0;
+const timer = setInterval(()=>{
+  elapsed += STEP;
+  bar.style.width = (elapsed/DELAY*100).toFixed(1)+'%';
+  leftS.textContent = Math.ceil((DELAY - elapsed)/1000);
+
+  if (elapsed >= DELAY){
+    clearInterval(timer);
+    location.replace(TARGET);
+  }
+}, STEP);
 </script>
 </body>
 </html>
