@@ -2,73 +2,115 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>민열♥️효정 모바일 청첩장</title>
+<title>민열♥효정 모바일 청첩장</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- 배경(느린 12 s 순환) ---------- */
-@keyframes bgMove {
-  0%   {background-position:0   0}
-  100% {background-position:400% 0}
+/* ===== 1. 우주 배경(별 + 느린 패닝) ========================= */
+@keyframes spaceMove{
+  0%{background-position:0 0}
+  100%{background-position:10000px 0}          /* 매우 길게 이동 */
 }
 body{
-  font-family:'Noto Sans KR',sans-serif; font-size:1.3rem;
-  display:flex; align-items:center; justify-content:center; height:100vh; margin:0;
-  background:linear-gradient(120deg,#FFF5E8 0%,#FFE7F0 25%,#F1F7FF 50%,#FFF5E8 75%,#FFE7F0 100%);
-  background-size:400% 400%;
-  animation:bgMove 12s linear infinite;            /* ★ 1 s → 12 s */
-  overflow:hidden;
+  margin:0; height:100vh; display:flex; justify-content:center; align-items:center;
+  font-family:'Noto Sans KR',sans-serif;
+  overflow:hidden; color:#fff;
+
+  /* 별이 점점 스크롤되는 패턴 */
+  background:
+    radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 51%) 0 0/200px 200px,
+    radial-gradient(2px 2px at 80% 70%, #fff 50%, transparent 51%) 0 0/200px 200px,
+    #000;
+  animation:spaceMove 120s linear infinite;
 }
 
-/* ---------- 하트(느린 펄스) ---------- */
-.heart{
-  position:absolute; width:90px; height:80px; transform:translate(-50%,-50%) rotate(45deg);
-  animation:pulse 1.2s ease-in-out infinite;       /* ★ 0.6 s → 1.2 s */
-}
-.heart:before,.heart:after{
-  content:''; position:absolute; width:90px; height:80px;
-  background:#ff8ba7; border-radius:50%;
-}
-.heart:before{top:-45px}
-.heart:after {left:-45px}
-@keyframes pulse{
-  0%,100%{transform:translate(-50%,-50%) scale(1)   rotate(45deg)}
-  50%     {transform:translate(-50%,-50%) scale(1.08) rotate(45deg)}
+/* ===== 2. 로켓 ============================================= */
+.rocket{
+  position:absolute; width:60px; height:100px;
+  left:-80px; bottom:-120px;                    /* 화면 밖에서 출발 */
+  transform-origin:50% 70%;
+  animation:rocketFly 6s linear infinite;
 }
 
-/* ---------- 로딩 문구(끝까지 표시) ---------- */
+/* 로켓 몸체 */
+.rocket::before{
+  content:''; position:absolute; width:100%; height:100%;
+  background:#fff; border-radius:30px 30px 10px 10px;
+  box-shadow:0 0 8px rgba(255,255,255,.8);
+}
+
+/* 로켓 노즈 */
+.rocket::after{
+  content:''; position:absolute; top:-25px; left:14px; width:32px; height:32px;
+  background:#ff6363; clip-path:polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* 날개 */
+.wing{
+  position:absolute; bottom:18px; width:18px; height:40px;
+  background:#ff6363; border-radius:4px;
+}
+.wing.left {left:-14px; transform:skewY(20deg);}
+.wing.right{right:-14px; transform:skewY(-20deg);}
+
+/* 불꽃 */
+.flame{
+  position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);
+  width:14px; height:30px; background:#ffcf40; border-radius:50% 50% 50% 50%;
+  animation:flameFlicker .15s infinite;
+}
+
+/* ===== 애니메이션 키프레임 ================================ */
+@keyframes rocketFly{
+  0%  {transform:translate(0,0)   rotate(45deg);}
+  100%{transform:translate(140vw,-140vh) rotate(45deg);}
+}
+@keyframes flameFlicker{
+  0%,100%{height:30px; background:#ffcf40;}
+  50%    {height:38px; background:#ffa500;}
+}
+
+/* ===== 3. 로딩 문구 ========================================= */
 .loading{
-  font-size:1.5rem; font-weight:700; text-align:center; line-height:1.4;
-  color:#694736; z-index:1;
-  animation:dance 0.8s infinite;                  /* fadeHold 제거 */
+  position:relative; z-index:2;
+  text-align:center; font-size:1.35rem; font-weight:700;
+  line-height:1.55; color:#ffd;
+  text-shadow:0 0 4px rgba(0,0,0,.3);
+  animation:float 2.4s ease-in-out infinite;
 }
-@keyframes dance{
+@keyframes float{
   0%,100%{transform:translateY(0)}
-  25%    {transform:translateY(-6px) rotate(-3deg)}
-  75%    {transform:translateY( 6px) rotate( 3deg)}
+  50%    {transform:translateY(-8px)}
 }
 </style>
 
-<!-- ── OG / Twitter ── -->
+<!-- ── OG / Twitter (필요시 수정) ── -->
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="https://myoh25.github.io/wedding-card/">
 <meta property="og:title"       content="민열♥️효정 결혼합니다">
-<meta property="og:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
+<meta property="og:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
 <meta property="og:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
 <meta name="twitter:card"       content="summary_large_image">
 </head>
 
 <body>
-  <div class="heart" style="top:45%;left:45%"></div>
-  <div class="heart" style="top:55%;left:55%;animation-delay:.2s"></div>
+  <!-- 로켓 (body 안 어디든 OK) -->
+  <div class="rocket">
+    <span class="wing left"></span>
+    <span class="wing right"></span>
+    <span class="flame"></span>
+  </div>
 
-  <div class="loading">😁 민열이와 효정이의<br>모바일 청첩장으로 배송중...🚀</div>
+  <!-- 로딩 문구 -->
+  <div class="loading">
+    민열이와 효정이의<br>모바일 청첩장으로 날아가는중...
+  </div>
 
 <script>
-/* ★ 1,000 ms → 2,500 ms : 텍스트가 충분히 보이도록 지연 */
+/* 2.5초 뒤 실제 웹앱으로 이동 */
 setTimeout(()=>location.replace(
-  'https://script.google.com/macros/s/AKfycbyKyuxmqhIAi2FNtXSuhFgbwDBz61J99VL_i4AXVQkQv6ftPbTqatYyVbu9Co60J2sk/exec'
+  'https://script.google.com/macros/s/AKfycbzEUoY62h2nHs0QeLR81DKGSK-2H-i-hXglJxZM4s_L_MKQ7mwt02P3rLEfE6FDXXdO/exec'
 ), 2500);
 </script>
 </body>
