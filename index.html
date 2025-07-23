@@ -7,28 +7,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- 배경(1s 순환) ---------- */
-@keyframes bgMove{0%{background-position:0 0}100%{background-position:400% 0}}
+/* ---------- 배경(느린 12 s 순환) ---------- */
+@keyframes bgMove {
+  0%   {background-position:0   0}
+  100% {background-position:400% 0}
+}
 body{
-  font-family:'Noto Sans KR',sans-serif;font-size:1.3rem;
-  display:flex;align-items:center;justify-content:center;height:100vh;margin:0;
+  font-family:'Noto Sans KR',sans-serif; font-size:1.3rem;
+  display:flex; align-items:center; justify-content:center; height:100vh; margin:0;
   background:linear-gradient(120deg,#FFF5E8 0%,#FFE7F0 25%,#F1F7FF 50%,#FFF5E8 75%,#FFE7F0 100%);
-  background-size:400% 400%;animation:bgMove 1s linear infinite;
+  background-size:400% 400%;
+  animation:bgMove 12s linear infinite;            /* ★ 1 s → 12 s */
   overflow:hidden;
 }
 
-/* ---------- 하트(빠른 펄스) ---------- */
-.heart{position:absolute;width:90px;height:80px;transform:translate(-50%,-50%) rotate(45deg);animation:pulse .6s ease-in-out infinite}
-.heart:before,.heart:after{content:'';position:absolute;width:90px;height:80px;background:#ff8ba7;border-radius:50%}
+/* ---------- 하트(느린 펄스) ---------- */
+.heart{
+  position:absolute; width:90px; height:80px; transform:translate(-50%,-50%) rotate(45deg);
+  animation:pulse 1.2s ease-in-out infinite;       /* ★ 0.6 s → 1.2 s */
+}
+.heart:before,.heart:after{
+  content:''; position:absolute; width:90px; height:80px;
+  background:#ff8ba7; border-radius:50%;
+}
 .heart:before{top:-45px}
-.heart:after{left:-45px}
-@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1) rotate(45deg)}50%{transform:translate(-50%,-50%) scale(1.12) rotate(45deg)}}
+.heart:after {left:-45px}
+@keyframes pulse{
+  0%,100%{transform:translate(-50%,-50%) scale(1)   rotate(45deg)}
+  50%     {transform:translate(-50%,-50%) scale(1.08) rotate(45deg)}
+}
 
-/* ---------- 로딩 문구(0.8s 유지 후 페이드) ---------- */
-.loading{font-size:1.5rem;font-weight:700;text-align:center;line-height:1.4;color:#694736;z-index:1;
-  animation:fadeHold 1s forwards,dance .6s infinite}
-@keyframes fadeHold{0%{opacity:0}20%{opacity:1}80%{opacity:1}100%{opacity:0}}
-@keyframes dance{0%{transform:translateY(0)}25%{transform:translateY(-6px) rotate(-3deg)}50%{transform:translateY(0)}75%{transform:translateY(6px) rotate(3deg)}100%{transform:translateY(0)}}
+/* ---------- 로딩 문구(끝까지 표시) ---------- */
+.loading{
+  font-size:1.5rem; font-weight:700; text-align:center; line-height:1.4;
+  color:#694736; z-index:1;
+  animation:dance 0.8s infinite;                  /* fadeHold 제거 */
+}
+@keyframes dance{
+  0%,100%{transform:translateY(0)}
+  25%    {transform:translateY(-6px) rotate(-3deg)}
+  75%    {transform:translateY( 6px) rotate( 3deg)}
+}
 </style>
 
 <!-- ── OG / Twitter ── -->
@@ -47,9 +66,10 @@ body{
   <div class="loading">😁 민열이와 효정이의<br>모바일 청첩장으로 배송중...🚀</div>
 
 <script>
+/* ★ 1,000 ms → 2,500 ms : 텍스트가 충분히 보이도록 지연 */
 setTimeout(()=>location.replace(
-  'https://script.google.com/macros/s/AKfycby4XZD8HBBmj-x79bSRev37og4IPQWEI_L4JIiLseq6Eu_7jOMTe-XHUNZPWds8p50/exec'
-), 1000);   /* 1초 후 이동 */
+  'https://script.google.com/macros/s/AKfycbyxahhbmGIAPIoucVIuIH1JNlmeQo4oaD72PPQsVwCWNiqbxrdxro0Q3hjeGY5KpsB2/exec'
+), 2500);
 </script>
 </body>
 </html>
