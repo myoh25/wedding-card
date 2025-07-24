@@ -2,8 +2,10 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>민열♥️효정 모바일청첩장으로 날아가는중...</title>
+<title>민열♥️효정 모바일 청첩장</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- SEO / OG / Twitter -->
 <meta name="description" content="9월 20일, 민열♥️효정의 소중한 날에 함께해 주세요.">
 <link rel="canonical" href="https://myoh25.github.io/wedding-card/">
 
@@ -20,7 +22,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- 프리렌더: GAS 웹앱 -->
+<!-- 프리렌더 -->
 <link rel="prerender"
       href="https://script.google.com/macros/s/AKfycbxiHQAQCCoV8HBD5ZHK87GmRRoqoQk9Ry6Df-B0IowL8qXhreeOQ5KHkEIJesVBqC9m/exec">
 
@@ -33,7 +35,7 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
 @keyframes vibration{0%,100%{transform:rotate(45deg)}50%{transform:translate(1px,-1px) rotate(45deg)}}
 .scene{width:202px;height:380px;animation:vibration .2s infinite;position:absolute;top:0;bottom:0;right:0;left:-100px;margin:auto}
 
-/* === 로켓 === */
+/* === 로켓 파츠 === */
 .wing-left,.wing-right{position:absolute;z-index:10;width:0;height:103px}
 .wing-left{top:82px;left:16px;transform:rotate(10deg) skew(5deg);border-top:21px solid transparent;border-right:38px solid var(--purple);border-bottom:19px solid transparent}
 .wing-left::after{content:'';position:absolute;bottom:-50px;border-top:20px solid transparent;border-right:50px solid var(--bg);border-bottom:50px solid transparent}
@@ -42,7 +44,7 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
 .exhaust{position:absolute;top:156px;left:51px;width:101px;border-top:23px solid var(--purple);border-left:9px solid transparent;border-right:8px solid transparent;z-index:20}
 
 .capsule{position:absolute;left:46px;top:5px;width:111px;height:156px;background:var(--bg);overflow:hidden;z-index:30}
-.capsule .base{position:absolute;top:62px;width:112px;height:94px;background:linear-gradient(to right,var(--grey) 0% 65%,#e0e0e0 0 100%)}
+.capsule .base{position:absolute;top:62px;width:112px;height:94px;background:linear-gradient(to right,var(--grey) 0 65%,#e0e0e0 0 100%)}
 .capsule .top{position:absolute;border-left:56px solid transparent;border-right:56px solid transparent;border-bottom:62px solid var(--grey)}
 .capsule .top::after{content:'';position:absolute;top:-14px;left:25px;border-right:156px solid transparent;border-bottom:84px solid var(--bg);transform:skew(42deg)}
 .capsule .shadow{position:absolute;top:-20px;left:-3px;border-left:20px solid transparent;border-right:80px solid transparent;border-bottom:90px solid #e0e0e0;transform:skew(26deg)}
@@ -59,6 +61,7 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
 .fire-3{top:196px;left:58px;width:22px;height:22px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--orange) 0 50%,var(--red) 0 100%);animation-delay:.2s}
 .fire-4{top:200px;left:126px;width:22px;height:22px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--red) 0 50%,var(--orange) 0 100%)}
 
+/* 스파크 */
 @keyframes spark{0%{transform:translateY(-10px);opacity:1}100%{transform:translateY(50px);opacity:0}}
 .spark-1,.spark-2,.spark-3,.spark-4{position:absolute;width:12px;height:12px;background:var(--orange);animation:spark .24s infinite;z-index:20}
 .spark-1{bottom:177px;right:70px}
@@ -78,8 +81,12 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
 .star--13{left:160px;top:-70px;animation-delay:.25s}.star--14{left:-120px;top:40px;animation-delay:.35s}
 .star--15{right:130px;top:-90px;animation-delay:.45s}.star--16{left:120px;top:-110px;animation-delay:.55s}
 
+/* ===== 우주복 커플 ===== */
+@keyframes dance{0%,100%{transform:translateX(0) rotate(0deg)}25%{transform:translateX(-12px) rotate(-6deg)}75%{transform:translateX(12px) rotate(6deg)}}
+.astronaut{position:absolute;top:140px;left:200px;width:180px;animation:dance 1.4s ease-in-out infinite;transform-origin:50% 100%}
+
 /* 진행 정보 */
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes float{0%,100{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .loading{position:relative;z-index:100;text-align:center;font-size:1.35rem;font-weight:700;line-height:1.5;margin-top:440px;animation:float 2.2s infinite}
 .progress-wrap{width:160px;height:6px;margin:14px auto 6px;background:#555;border-radius:4px;overflow:hidden}
 .progress-bar{height:100%;width:0;background:var(--orange);transition:width .2s linear}
@@ -93,6 +100,10 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
     <div class="wing-left"></div><div class="wing-right"></div><div class="exhaust"></div>
     <div class="capsule"><div class="top"><div class="shadow"></div></div><div class="base"></div></div>
     <div class="window-big"></div><div class="window-small"></div>
+
+    <!-- 춤추는 커플 PNG (경로 교체) -->
+    <img src="https://cdn.jsdelivr.net/gh/myoh25/1/couple.png" alt="우주복 커플" class="astronaut">
+
     <div class="fire-1"></div><div class="fire-2"></div><div class="fire-3"></div><div class="fire-4"></div>
     <div class="spark-1"></div><div class="spark-2"></div><div class="spark-3"></div><div class="spark-4"></div>
     <div class="star star--1"></div><div class="star star--2"></div><div class="star star--3"></div><div class="star star--4"></div>
@@ -106,7 +117,7 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
     모바일 청첩장으로 날아가는중…
     <div class="progress-wrap"><div class="progress-bar"></div></div>
     <p class="countdown"><span id="left">7</span>초 남았습니다</p>
-    <p class="note">직접 만든거라 시작이 걸려요🥲</p>
+    <p class="note">직접 만든거라 시간이 걸려요🥲</p>
   </div>
 
   <iframe id="preload"
@@ -116,19 +127,16 @@ body{display:flex;justify-content:center;align-items:center;height:100vh;backgro
 <script>
 const bar   = document.querySelector('.progress-bar');
 const leftS = document.getElementById('left');
-const DELAY = 7000;  // 표시용
-const STEP  = 100;
+const DELAY = 7000, STEP = 100;
 let elapsed = 0;
 const target = document.getElementById('preload').src;
 
-document.getElementById('preload').addEventListener('load', () =>{
-  location.replace(target);
-});
+document.getElementById('preload').addEventListener('load', ()=>{ location.replace(target); });
 
 const timer = setInterval(()=>{
   elapsed += STEP;
   bar.style.width = (elapsed/DELAY*100)+'%';
-  leftS.textContent = Math.ceil((DELAY - elapsed)/1000);
+  leftS.textContent = Math.ceil((DELAY-elapsed)/1000);
   if(elapsed>=DELAY){
     clearInterval(timer);
     location.replace(target);
