@@ -1,254 +1,137 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>민열♥️효정 모바일 청첩장</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<title>민열♥️효정 모바일청첩장으로 날아가는중...</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="9월 20일, 민열♥️효정의 소중한 날에 함께해 주세요.">
+<link rel="canonical" href="https://myoh25.github.io/wedding-card/">
 
-  <!-- 기본 SEO -->
-  <meta name="description" content="9월 20일, 민열♥️효정의 소중한 날에 함께해 주세요.">
-  <link rel="canonical" href="https://myoh25.github.io/wedding-card/">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://myoh25.github.io/wedding-card/">
+<meta property="og:title"       content="민열♥️효정 결혼합니다">
+<meta property="og:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
+<meta property="og:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://myoh25.github.io/wedding-card/">
-  <meta property="og:title"       content="민열♥️효정 결혼합니다">
-  <meta property="og:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
-  <meta property="og:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="민열♥️효정 결혼합니다">
+<meta name="twitter:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
+<meta name="twitter:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="민열♥️효정 결혼합니다">
-  <meta name="twitter:description" content="9월 20일, 저희의 소중한 날에 함께해 주세요.">
-  <meta name="twitter:image"       content="https://myoh25.github.io/wedding-card/og.png?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- 폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<!-- 프리렌더: GAS 웹앱 -->
+<link rel="prerender"
+      href="https://script.google.com/macros/s/AKfycbxiHQAQCCoV8HBD5ZHK87GmRRoqoQk9Ry6Df-B0IowL8qXhreeOQ5KHkEIJesVBqC9m/exec">
 
 <style>
-/* ---- 색 변수 (SCSS → CSS) ------------------------------ */
-:root{
-  --purple:#743388;
-  --darkpurple:#272425;
-  --orange:#EF8B32;
-  --red:#E82134;
-  --bg:#1D1D1D;
-  --grey:#F3F3F3;
-}
-
-/* ---- 초기화 & 배경 ------------------------------------ */
+:root{--purple:#743388;--darkpurple:#272425;--orange:#ef8b32;--red:#e82134;--bg:#1d1d1d;--grey:#f3f3f3}
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  height:100vh;display:flex;justify-content:center;align-items:center;
-  background:var(--bg);font-family:'Noto Sans KR',sans-serif;color:#fff;
-  overflow:hidden;
-}
+body{display:flex;justify-content:center;align-items:center;height:100vh;background:var(--bg);font-family:'Noto Sans KR',sans-serif;color:#fff;overflow:hidden}
 
-/* ---- 메인 컨테이너 (로켓+별 흔들림) -------------------- */
-.scene{
-  width:202px;height:380px;animation:vibration .2s infinite;
-  position:absolute;top:0;left:-100px;right:0;bottom:0;margin:auto;
-}
+/* 흔들림 */
+@keyframes vibration{0%,100%{transform:rotate(45deg)}50%{transform:translate(1px,-1px) rotate(45deg)}}
+.scene{width:202px;height:380px;animation:vibration .2s infinite;position:absolute;top:0;bottom:0;right:0;left:-100px;margin:auto}
 
-/* ========== 로켓 파츠 ================================== */
-/* 날개 */
-.wing-left,.wing-right{
-  position:absolute;z-index:10;width:0;height:103px;
-}
-.wing-left{
-  top:82px;left:16px;transform:rotate(10deg) skew(5deg);
-  border-top:21px solid transparent;border-right:38px solid var(--purple);border-bottom:19px solid transparent;
-}
-.wing-left::after{
-  content:'';position:absolute;bottom:-50px;border-top:20px solid transparent;border-right:50px solid var(--bg);border-bottom:50px solid transparent;
-}
-.wing-right{
-  top:62px;right:17px;transform:rotate(-10deg) skew(-5deg);
-  border-top:0;border-right:40px solid var(--purple);border-bottom:15px solid transparent;
-}
-.wing-right::after{
-  content:'';position:absolute;top:-33px;left:-19px;border-top:36px solid transparent;border-right:68px solid var(--bg);border-bottom:45px solid transparent;
-}
+/* === 로켓 === */
+.wing-left,.wing-right{position:absolute;z-index:10;width:0;height:103px}
+.wing-left{top:82px;left:16px;transform:rotate(10deg) skew(5deg);border-top:21px solid transparent;border-right:38px solid var(--purple);border-bottom:19px solid transparent}
+.wing-left::after{content:'';position:absolute;bottom:-50px;border-top:20px solid transparent;border-right:50px solid var(--bg);border-bottom:50px solid transparent}
+.wing-right{top:62px;right:17px;transform:rotate(-10deg) skew(-5deg);border-right:40px solid var(--purple);border-bottom:15px solid transparent}
+.wing-right::after{content:'';position:absolute;top:-33px;left:-19px;border-top:36px solid transparent;border-right:68px solid var(--bg);border-bottom:45px solid transparent}
+.exhaust{position:absolute;top:156px;left:51px;width:101px;border-top:23px solid var(--purple);border-left:9px solid transparent;border-right:8px solid transparent;z-index:20}
 
-/* 배기구 */
-.exhaust{
-  position:absolute;top:156px;left:51px;height:0;width:101px;z-index:20;
-  border-top:23px solid var(--purple);border-left:9px solid transparent;border-right:8px solid transparent;
-}
+.capsule{position:absolute;left:46px;top:5px;width:111px;height:156px;background:var(--bg);overflow:hidden;z-index:30}
+.capsule .base{position:absolute;top:62px;width:112px;height:94px;background:linear-gradient(to right,var(--grey) 0% 65%,#e0e0e0 0 100%)}
+.capsule .top{position:absolute;border-left:56px solid transparent;border-right:56px solid transparent;border-bottom:62px solid var(--grey)}
+.capsule .top::after{content:'';position:absolute;top:-14px;left:25px;border-right:156px solid transparent;border-bottom:84px solid var(--bg);transform:skew(42deg)}
+.capsule .shadow{position:absolute;top:-20px;left:-3px;border-left:20px solid transparent;border-right:80px solid transparent;border-bottom:90px solid #e0e0e0;transform:skew(26deg)}
 
-/* 캡슐(본체) */
-.capsule{
-  position:absolute;left:46px;top:5px;width:111px;height:156px;overflow:hidden;z-index:30;
-  background:var(--bg);
-}
-.capsule .base{
-  position:absolute;top:62px;width:112px;height:94px;
-  background:linear-gradient(to right,var(--grey) 0%,var(--grey) 65%,#E0E0E0 65%,#E0E0E0 100%);
-}
-.capsule .top{
-  position:absolute;left:0;border-left:56px solid transparent;border-right:56px solid transparent;border-bottom:62px solid var(--grey);
-}
-.capsule .top::after{
-  content:'';position:absolute;top:-14px;left:25px;border-left:0 solid transparent;border-right:156px solid transparent;border-bottom:84px solid var(--bg);transform:skew(42deg);z-index:50;
-}
-.capsule .shadow{
-  position:absolute;top:-20px;left:-3px;border-left:20px solid transparent;border-right:80px solid transparent;border-bottom:90px solid #E0E0E0;transform:skew(26deg);z-index:40;
-}
+.window-big{position:absolute;top:57px;left:66px;width:70px;height:70px;border-radius:50%;background:var(--purple);z-index:40}
+.window-small{position:absolute;top:70px;left:79px;width:44px;height:44px;border-radius:50%;background:var(--darkpurple);z-index:50}
 
-/* 창문 */
-.window-big{
-  position:absolute;top:57px;left:66px;width:70px;height:70px;border-radius:50%;background:var(--purple);z-index:40;
-}
-.window-small{
-  position:absolute;top:70px;left:79px;width:44px;height:44px;border-radius:50%;background:var(--darkpurple);z-index:50;
-}
+/* 불꽃 */
+@keyframes mainFire{0%{transform:translate(0,5px) scale(1.1,1)}100%{transform:translate(0) scale(1,1.4)}}
+.fire-1{position:absolute;top:169px;left:64px;width:70px;height:70px;background:linear-gradient(135deg,var(--orange) 0 50%,var(--red) 0 100%);transform:rotate(-40deg) skew(1deg,-11deg);animation:mainFire .1s cubic-bezier(.175,.885,.42,1.41) infinite;z-index:10}
+@keyframes exhaust{0%{transform:translateY(-10px);opacity:1}100%{transform:translateY(50px) scale(.7);opacity:0}}
+.fire-2,.fire-3,.fire-4{position:absolute;animation:exhaust .3s ease-in infinite;transform-origin:50%}
+.fire-2{top:180px;left:58px;width:55px;height:55px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--red) 0 50%,var(--orange) 0 100%);animation-delay:.2s}
+.fire-3{top:196px;left:58px;width:22px;height:22px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--orange) 0 50%,var(--red) 0 100%);animation-delay:.2s}
+.fire-4{top:200px;left:126px;width:22px;height:22px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--red) 0 50%,var(--orange) 0 100%)}
 
-/* ---- 불꽃 & 스파크 공통 애니메이션 -------------------- */
-@keyframes main_fire{
-  0%{transform:translate(0,5px) scale(1.1,1) rotate(-33deg) skew(0,-30deg)}
-  100%{transform:translate(0,0) scale(1,1.4) rotate(-33deg) skew(0,-30deg)}
-}
-@keyframes dancing_fire{
-  0%{transform:translate(0,-10px);opacity:1}
-  100%{transform:translate(0,50px);opacity:0}
-}
-@keyframes fire_propulsion{
-  0%{transform:translate(0,-10px) scale(1) rotate(-33deg) skew(0,-30deg);opacity:1}
-  100%{transform:translate(0,50px) scale(.7) rotate(-33deg) skew(0,-30deg);opacity:0}
-}
-@keyframes hyperspace{
-  0%{transform:translate(0,-100px) scale(1,0);opacity:1}
-  100%{transform:translate(0,400px) scale(1,1);opacity:0}
-}
-
-/* 메인 불꽃 */
-.fire-1{
-  position:absolute;top:169px;left:64px;width:70px;height:70px;z-index:10;
-  background:linear-gradient(135deg,var(--orange) 0%,var(--orange) 50%,var(--red) 50%,var(--red) 100%);
-  transform-origin:50% 50%;transform:rotate(-40deg) skew(1deg,-11deg);
-  animation:main_fire .1s cubic-bezier(.175,.885,.42,1.41) infinite;
-}
-/* 보조 불꽃 */
-.fire-2,.fire-3,.fire-4{
-  position:absolute;transform-origin:50% 50%;z-index:20;animation:fire_propulsion .3s ease-in infinite;
-}
-.fire-2{top:180px;left:58px;width:55px;height:55px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--red) 0%,var(--red) 50%,var(--orange) 50%,var(--orange) 100%);animation-delay:.2s}
-.fire-3{top:196px;left:58px;width:22px;height:22px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--orange) 0%,var(--orange) 50%,var(--red) 50%,var(--red) 100%);animation-delay:.2s}
-.fire-4{top:200px;left:126px;width:22px;height:22px;transform:rotate(-33deg) skew(0,-30deg);background:linear-gradient(135deg,var(--red) 0%,var(--red) 50%,var(--orange) 50%,var(--orange) 100%)}
-
-/* 스파크 */
-.spark-1,.spark-2,.spark-3,.spark-4{
-  position:absolute;width:12px;height:12px;background:var(--orange);z-index:20;transform-origin:50% 50%;animation:dancing_fire .24s infinite;
-}
+@keyframes spark{0%{transform:translateY(-10px);opacity:1}100%{transform:translateY(50px);opacity:0}}
+.spark-1,.spark-2,.spark-3,.spark-4{position:absolute;width:12px;height:12px;background:var(--orange);animation:spark .24s infinite;z-index:20}
 .spark-1{bottom:177px;right:70px}
 .spark-2{bottom:147px;left:52px;width:10px;height:10px;transform:rotate(45deg);animation-delay:.22s}
 .spark-3{bottom:90px;left:109px;width:10px;height:10px;transform:rotate(45deg);background:var(--red);animation-delay:.32s}
 .spark-4{bottom:20px;left:83px;width:10px;height:10px;animation-delay:.16s}
 
-/* 별(하이퍼스페이스 선) */
-.star{
-  position:absolute;width:4px;height:20px;background:#fff;animation:hyperspace .4s infinite;z-index:90;
-}
-.star--1 {left:50px;top:-10px;animation-delay:.1s}
-.star--2 {right:60px;top:30px;animation-delay:.1s}
-.star--3 {left:25px;top:80px;animation-delay:.2s}
-.star--4 {right:75px;top:-20px;animation-delay:.2s}
-.star--5 {right:30px;top:-60px;animation-delay:.3s}
-.star--6 {right:160px;top:50px;animation-delay:.4s}
-.star--7 {left:75px;top:20px;animation-delay:.3s}
-.star--8 {right:95px;top:-30px;animation-delay:.4s}
-.star--9 {left:-30px;top:-60px;animation-delay:.3s}
-.star--10{right:-20px;top:50px;animation-delay:.4s}
-.star--11{left:-75px;top:20px;animation-delay:.3s}
-.star--12{right:-95px;top:-30px;animation-delay:.4s}
-.star--13{left:160px;top:-70px;animation-delay:.25s}
-.star--14{left:-120px;top:40px;animation-delay:.35s}
-.star--15{right:130px;top:-90px;animation-delay:.45s}
-.star--16{left:120px;top:-110px;animation-delay:.55s}
+/* 별 */
+@keyframes stars{0%{transform:translateY(-100px) scale(1,0);opacity:1}100%{transform:translateY(400px);opacity:0}}
+.star{position:absolute;width:4px;height:20px;background:#fff;animation:stars .4s infinite;z-index:90}
+.star--1{left:50px;top:-10px;animation-delay:.1s}.star--2{right:60px;top:30px;animation-delay:.1s}
+.star--3{left:25px;top:80px;animation-delay:.2s}.star--4{right:75px;top:-20px;animation-delay:.2s}
+.star--5{right:30px;top:-60px;animation-delay:.3s}.star--6{right:160px;top:50px;animation-delay:.4s}
+.star--7{left:75px;top:20px;animation-delay:.3s}.star--8{right:95px;top:-30px;animation-delay:.4s}
+.star--9{left:-30px;top:-60px;animation-delay:.3s}.star--10{right:-20px;top:50px;animation-delay:.4s}
+.star--11{left:-75px;top:20px;animation-delay:.3s}.star--12{right:-95px;top:-30px;animation-delay:.4s}
+.star--13{left:160px;top:-70px;animation-delay:.25s}.star--14{left:-120px;top:40px;animation-delay:.35s}
+.star--15{right:130px;top:-90px;animation-delay:.45s}.star--16{left:120px;top:-110px;animation-delay:.55s}
 
-/* 화면 전체 흔들림 */
-@keyframes vibration{
-  0%,100%{transform:translate(0,0) rotate(45deg)}
-  50%{transform:translate(1px,-1px) rotate(45deg)}
-}
-/* ---- 로딩 문구 ---------------------------------------- */
-.loading{
-  position:relative;z-index:100;text-align:center;font-size:1.4rem;font-weight:700;
-  line-height:1.5;margin-top:440px;animation:float 2.2s ease-in-out infinite; /* float 재사용 */
-}
+/* 진행 정보 */
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-/* 로딩 박스 안 진행 바 */
-.progress-wrap{
-  width:160px; height:6px; margin:14px auto 6px; background:#555; border-radius:4px;
-  overflow:hidden;
-}
-.progress-bar{
-  width:0%; height:100%; background:#ff9800; transition:width .2s linear;
-}
-
-/* 초 숫자 */
+.loading{position:relative;z-index:100;text-align:center;font-size:1.35rem;font-weight:700;line-height:1.5;margin-top:440px;animation:float 2.2s infinite}
+.progress-wrap{width:160px;height:6px;margin:14px auto 6px;background:#555;border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:var(--orange);transition:width .2s linear}
 .countdown{margin-top:4px;font-size:1rem;font-weight:500}
-.note{
-  font-size:.78rem;            /* 본문보다 작게 */
-  color:#ccc;                  /* 회색 톤으로 은은하게 */
-  margin-top:4px;
-}
+.note{margin-top:4px;font-size:.78rem;color:#ccc}
 </style>
 </head>
 
 <body>
   <div class="scene">
-    <div class="wing-left"></div>
-    <div class="wing-right"></div>
-    <div class="exhaust"></div>
-
-    <div class="capsule">
-      <div class="top"><div class="shadow"></div></div>
-      <div class="base"></div>
-    </div>
-
-    <div class="window-big"></div>
-    <div class="window-small"></div>
-
+    <div class="wing-left"></div><div class="wing-right"></div><div class="exhaust"></div>
+    <div class="capsule"><div class="top"><div class="shadow"></div></div><div class="base"></div></div>
+    <div class="window-big"></div><div class="window-small"></div>
     <div class="fire-1"></div><div class="fire-2"></div><div class="fire-3"></div><div class="fire-4"></div>
     <div class="spark-1"></div><div class="spark-2"></div><div class="spark-3"></div><div class="spark-4"></div>
-
-    <!-- 별 16개 -->
     <div class="star star--1"></div><div class="star star--2"></div><div class="star star--3"></div><div class="star star--4"></div>
     <div class="star star--5"></div><div class="star star--6"></div><div class="star star--7"></div><div class="star star--8"></div>
     <div class="star star--9"></div><div class="star star--10"></div><div class="star star--11"></div><div class="star star--12"></div>
     <div class="star star--13"></div><div class="star star--14"></div><div class="star star--15"></div><div class="star star--16"></div>
   </div>
 
-  <!-- 로딩 문구 -->
-  <div class="loading">민열이와 효정이의<br>모바일 청첩장으로 날아가는중...
-  <div class="progress-wrap">
-    <div class="progress-bar"></div>
+  <div class="loading">
+    민열이와 효정이의<br>
+    모바일 청첩장으로 날아가는중…
+    <div class="progress-wrap"><div class="progress-bar"></div></div>
+    <p class="countdown"><span id="left">7</span>초 남았습니다</p>
+    <p class="note">직접 만든거라 시작이 걸려요🥲</p>
   </div>
-  <p class="countdown"><span id="left">5</span>초 남았습니다</p>
-  <p class="note">직접 만든거라 시간이 걸려요🥲</p>
-</div>
+
+  <iframe id="preload"
+          src="https://script.google.com/macros/s/AKfycbxiHQAQCCoV8HBD5ZHK87GmRRoqoQk9Ry6Df-B0IowL8qXhreeOQ5KHkEIJesVBqC9m/exec"
+          style="position:absolute;width:0;height:0;border:0;visibility:hidden"></iframe>
+
 <script>
-const TARGET = 'https://script.google.com/macros/s/AKfycbxiHQAQCCoV8HBD5ZHK87GmRRoqoQk9Ry6Df-B0IowL8qXhreeOQ5KHkEIJesVBqC9m/exec';
-const DELAY  = 5000;   // 타이머는 그대로 5s
-const STEP   = 100;
-
-const bar = document.querySelector('.progress-bar');
+const bar   = document.querySelector('.progress-bar');
 const leftS = document.getElementById('left');
-
-/* (1) 백그라운드로 미리 프리페치 */
-fetch(TARGET, {mode:'no-cors'}).catch(()=>{});   // 오류 무시 — 캐시만 확보
-
-/* (2) 기존 타이머 로직 */
+const DELAY = 7000;  // 표시용
+const STEP  = 100;
 let elapsed = 0;
+const target = document.getElementById('preload').src;
+
+document.getElementById('preload').addEventListener('load', () =>{
+  location.replace(target);
+});
+
 const timer = setInterval(()=>{
   elapsed += STEP;
-  bar.style.width = (elapsed/DELAY*100).toFixed(1)+'%';
+  bar.style.width = (elapsed/DELAY*100)+'%';
   leftS.textContent = Math.ceil((DELAY - elapsed)/1000);
-
-  if (elapsed >= DELAY){
+  if(elapsed>=DELAY){
     clearInterval(timer);
-    location.replace(TARGET);
+    location.replace(target);
   }
 }, STEP);
 </script>
